@@ -1,0 +1,118 @@
+:root {
+  --primary-color: rgb(217, 24, 24);
+  --secondary-color: rgb(27, 255, 84);
+  --info: rgb(34, 76, 230);
+  --danger: rgb(255, 0, 0);
+  --success: rgb(27, 255, 84);
+  --warning: rgb(226, 255, 8);
+  --text-primary: rgb(7, 7, 7);
+  --text-secondary: rgb(49, 49, 49);
+  --bg-default: rgb(231, 231, 231);
+  --bg-paper: rgb(255, 255, 255);
+  --yellow: rgb(255, 247, 8);
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes grow-in {
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 100vh;
+  }
+}
+body {
+  background-color: var(--bg-default);
+}
+.card {
+  background-color: var(--bg-paper);
+}
+.header {
+  --bg-paper: rgb(250, 246, 211);
+  background-color: var(--bg-paper);
+}
+.menu {
+  padding: 2rem;
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+}
+.menu_item {
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: all 1s ease;
+}
+
+.menu_item::after {
+  position: absolute;
+  bottom: -5px;
+  height: 2px;
+  right: 0;
+  left: 100%;
+  content: "";
+  background-color: var(--primary-color);
+  transition: left 2s ease;
+}
+.menu_item:hover::after {
+  color: var(--primary-color);
+  left: 0;
+}
+
+.menu_item:hover {
+  color: var(--primary-color);
+  background-color: aquamarine;
+}
+
+.sub-menu {
+  max-height: 0;
+  position: absolute;
+  background-color: beige;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.menu_item:hover > .sub-menu {
+  animation: grow-in 4s ease;
+  max-height: 100vh;
+  text-overflow: ellipsis;
+}
+
+.container {
+  width: 1600px;
+  margin: 0 auto;
+}
+.m-r-auto {
+  margin-right: auto;
+}
+h1 {
+  color: var(--text-primary);
+  position: relative;
+  font-size: 5rem;
+  margin-right: var(--side_width);
+  --side_width: 10rem;
+  --side_height: 2rem;
+}
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  width: var(--side_width);
+  background-color: var(--primary-color);
+  height: var(--side_height);
+  top: calc(50% - calc(var(--side_height) / 2));
+}
+h1::before {
+  right: calc(var(--side_width) * -1);
+}
+p {
+  color: var(--text-secondary);
+  width: max(300px, 50%);
+}

@@ -1,0 +1,33 @@
+:root {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.8rem;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 2;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
